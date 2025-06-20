@@ -126,12 +126,7 @@ class IPRangeChecker:
         if all_successful:
             print(f"✓ Found {len(all_successful)} reachable IPs:")
             for ip in sorted(all_successful, key=lambda x: tuple(int(part) for part in x.split('.'))):
-                print(f"  {ip}")
-            
-            with open('successful_ips.txt', 'w') as f:
-                for ip in all_successful:
-                    f.write(f"{ip}\n")
-            print(f"\nResults saved to 'successful_ips.txt'")
+                print(f"  {ip}")            
         else:
             print("✗ No reachable IPs found in any range")
         
